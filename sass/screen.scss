@@ -1,0 +1,265 @@
+@import "vendor/normalize";
+//@import "vendor/animate";
+//@import "harsh";
+
+@import "compass/css3";
+@import "compass/typography";
+
+@import "mixins";
+
+// Palette
+$white: #fff;
+$gray: #ddd;
+$dark-gray: #242424;
+
+$base-color: #2ca1cc;
+$accent-color: salmon;
+
+// Typography
+$base-font-size: 18px;
+$base-line-height: 26px;
+
+@include establish-baseline;
+
+// Style Vars
+$spacing: 1em;
+$border-radius: 4px;
+$difference: 15%;
+
+$animation-length: .3s;
+$animation-style: 'ease-in';
+
+/*
+ * Begin Styles
+ */
+
+body {
+	background: $base-color url(../img/bg-noise.png) repeat;
+	font-family: 'Open Sans',Helvetica,sans-serif;
+	color: $dark-gray;
+}
+
+h3 {
+	color: darken($base-color, 5%);
+}
+
+h6 {
+	@include adjust-font-size-to(18px);
+}
+
+small {
+	@include adjust-font-size-to(13px);
+}
+
+input, button {
+	@include inline-block;
+	@include box-sizing(border-box);
+	height: 2.8em;
+
+	margin-bottom: .5em;
+}
+
+button {
+	@include inline-block;
+	@include border-radius($border-radius);
+
+	position: relative;
+
+	padding: 0 1em;
+
+	background-color: darken($accent-color, 10%);
+	border: 1px solid darken($accent-color, $difference);
+
+	color: lighten($accent-color, $difference*4);
+	font-weight: bold;
+
+	&:hover {
+		background: darken($accent-color, 20%);
+
+		@include transition-property(background-color);
+		@include transition-duration($animation-length);
+		@include transition-timing-function($animation-style);
+	}
+
+	&:active {
+		background: darken($accent-color, 30%);
+	}
+}
+
+/*
+.rocket {
+	overflow: hidden;
+
+	.icon {
+		@extend .animated;
+	}
+
+	&:hover .icon {
+		@extend .pulse;
+	}
+}
+*/
+
+::-webkit-input-placeholder,
+:-moz-placeholder,
+::-moz-placeholder,
+:-ms-input-placeholder {
+   color: lighten($gray, 50%);
+}
+
+a {
+	color: darken($base-color, $difference);
+	font-weight: bold;
+
+	&:hover {
+		text-decoration: none;
+	}
+
+	&:active {
+		color: darken($base-color, $difference*2);
+	}
+}
+
+// Layout
+
+.container {
+	@include box-shadow(0 0 .5em darken($base-color, $difference));
+
+	width: 80%;
+	max-width: 35em;
+
+	margin: 2em auto 0;
+	padding: $spacing*2;
+
+	background: $white;
+
+	border: 1em solid lighten($base-color, round($difference*2.5));
+}
+
+.title {
+	$bg-color: darken($base-color, $difference);
+
+	@include inline-block;
+	@include adjust-font-size-to(36px);
+	@include text-shadow(1px 1px 0 darken($base-color, 40%));
+
+	background: $bg-color;
+	//@include harsh($bg-color, $nuance-strength: 5, $background: false, $transparency: .3);
+
+	position: relative;
+
+	margin-top: 0;
+	padding: .5em 1em .5em 2em;
+
+	left: -2em;
+
+	font-family: "Bitter",serif;
+	color: $white;
+}
+
+.title:before {
+	$edge-color: darken($base-color, $difference*2);
+
+	display: block;
+	position: absolute;
+	z-index: -1;
+
+	width: 0;
+	height: 0;
+
+	left: 0;
+	top: 100%;
+
+	content: " ";
+
+	border-width: .5em;
+	border-style: solid;
+	border-color: $edge-color $edge-color transparent transparent;
+}
+
+.intro {
+	@include adjust-font-size-to(22px);
+	line-height: 1.5; // XXX - Grossness with vertical rhythm
+}
+
+.benefits ul {
+	margin-bottom: 1.5em;
+}
+
+.signup-form {
+	position: relative;
+	margin-bottom: 1.5em;
+}
+
+.signup-form label[for="Email-Field"] {
+	position: absolute;
+	left: .8em;
+	top: .65em;
+
+	cursor: text;
+
+	color: darken($gray, 30%);
+}
+
+.email-field {
+	background-color: $gray;
+
+	width: 80%;
+	max-width: 24em;
+
+	padding-right: .8em;
+	padding-left: 2.6em;
+
+	border: 1px solid transparent;
+
+	&:hover {
+		background-color: lighten($gray, 3%);
+		border-color: lighten($gray, 1%);
+
+		@include transition-property(background-color, border-color);
+		@include transition-duration($animation-length);
+		@include transition-timing-function($animation-style);
+	}
+
+	&:focus {
+		background-color: $white;
+		border-color: $gray;
+
+		@include transition-property(background-color, border);
+		@include transition-duration($animation-length);
+		@include transition-timing-function($animation-style);
+	}
+}
+
+.promise {
+	color: darken($gray, 40%);
+
+	.icon {
+		@include text-shadow(1px 1px 0 darken(red, $difference));
+		color: lighten(red, $difference);
+	}
+
+	h6 {
+		margin: 0;
+	}
+
+	p {
+		@include adjust-font-size-to(14px);
+
+		// XXX - Grossness with vertical rhythm
+		margin-left: 1.8em; 
+		margin-top: .5em;
+	}
+}
+
+.page-footer{
+	padding-left: 1.3em;
+
+	p {
+		margin-bottom: 0;
+	}
+}
+
+.copyright {
+	color: darken($gray, 20%);
+}

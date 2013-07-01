@@ -1,0 +1,7 @@
+@mixin linear-gradient-background($color, $diff) {
+	background-color: $color; // Old browsers
+	@include filter-gradient($color, darken($color, $diff), vertical); // IE6-8
+	// IE9 SVG, needs conditional override of 'filter' to 'none'
+	$experimental-support-for-svg: true;
+	@include background-image(linear-gradient(top, $color 0%, darken($color, $diff) 100%));
+}
