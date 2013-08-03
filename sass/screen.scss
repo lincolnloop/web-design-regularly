@@ -86,20 +86,6 @@ button {
 	}
 }
 
-/*
-.rocket {
-	overflow: hidden;
-
-	.icon {
-		@extend .animated;
-	}
-
-	&:hover .icon {
-		@extend .pulse;
-	}
-}
-*/
-
 ::-webkit-input-placeholder,
 :-moz-placeholder,
 ::-moz-placeholder,
@@ -144,7 +130,6 @@ a {
 	@include text-shadow(1px 1px 0 darken($base-color, 40%));
 
 	background: $bg-color;
-	//@include harsh($bg-color, $nuance-strength: 5, $background: false, $transparency: .3);
 
 	position: relative;
 
@@ -178,8 +163,7 @@ a {
 }
 
 .intro {
-	@include adjust-font-size-to(21px);
-	line-height: 1.5; // XXX - Grossness with vertical rhythm
+	@include adjust-font-size-to(21px, 1.5);
 }
 
 .benefits ul {
@@ -262,4 +246,37 @@ a {
 
 .copyright {
 	color: darken($gray, 20%);
+}
+
+@media (max-width: 500px) {
+	.container {
+		margin: 0 auto;
+		padding: $spacing;
+	}
+
+	.title {
+		@include adjust-font-size-to(32px);
+		
+		position: static;
+		display: block;
+
+		width: auto;
+
+		padding-left: $spacing/2;
+		padding-right: $spacing/2;
+
+		text-align: center;
+	}
+
+	.title:before {
+		display: none;
+	}
+
+	.intro {
+		@include adjust-font-size-to(18px);
+	}
+
+	.email-field {
+		width: 95%;
+	}
 }
