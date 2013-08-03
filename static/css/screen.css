@@ -498,20 +498,7 @@ button:active {
   background: #cc1b07;
 }
 
-/*
-.rocket {
-	overflow: hidden;
-
-	.icon {
-		@extend .animated;
-	}
-
-	&:hover .icon {
-		@extend .pulse;
-	}
-}
-*/
-/* line 106, ../../sass/screen.scss */
+/* line 92, ../../sass/screen.scss */
 ::-webkit-input-placeholder,
 :-moz-placeholder,
 ::-moz-placeholder,
@@ -519,21 +506,21 @@ button:active {
   color: white;
 }
 
-/* line 110, ../../sass/screen.scss */
+/* line 96, ../../sass/screen.scss */
 a {
   color: #1e6f8d;
   font-weight: bold;
 }
-/* line 114, ../../sass/screen.scss */
+/* line 100, ../../sass/screen.scss */
 a:hover {
   text-decoration: none;
 }
-/* line 118, ../../sass/screen.scss */
+/* line 104, ../../sass/screen.scss */
 a:active {
   color: #113e4e;
 }
 
-/* line 125, ../../sass/screen.scss */
+/* line 111, ../../sass/screen.scss */
 .container {
   -webkit-box-shadow: 0 0 0.5em #1e6f8d;
   -moz-box-shadow: 0 0 0.5em #1e6f8d;
@@ -546,7 +533,7 @@ a:active {
   border: 1em solid #c7e7f3;
 }
 
-/* line 139, ../../sass/screen.scss */
+/* line 125, ../../sass/screen.scss */
 .title {
   display: -moz-inline-stack;
   display: inline-block;
@@ -566,7 +553,7 @@ a:active {
   color: white;
 }
 
-/* line 160, ../../sass/screen.scss */
+/* line 145, ../../sass/screen.scss */
 .title:before {
   display: block;
   position: absolute;
@@ -581,25 +568,24 @@ a:active {
   border-color: #113e4e #113e4e transparent transparent;
 }
 
-/* line 180, ../../sass/screen.scss */
+/* line 165, ../../sass/screen.scss */
 .intro {
   font-size: 1.16667em;
-  line-height: 1.2381em;
-  line-height: 1.5;
+  line-height: 1.85714em;
 }
 
-/* line 185, ../../sass/screen.scss */
+/* line 169, ../../sass/screen.scss */
 .benefits ul {
   margin-bottom: 1.5em;
 }
 
-/* line 189, ../../sass/screen.scss */
+/* line 173, ../../sass/screen.scss */
 .signup-form {
   position: relative;
   margin-bottom: 1.5em;
 }
 
-/* line 194, ../../sass/screen.scss */
+/* line 178, ../../sass/screen.scss */
 .signup-form label[for="Email-Field"] {
   position: absolute;
   left: .8em;
@@ -608,7 +594,7 @@ a:active {
   color: #919191;
 }
 
-/* line 204, ../../sass/screen.scss */
+/* line 188, ../../sass/screen.scss */
 .email-field {
   background-color: #dddddd;
   width: 80%;
@@ -617,7 +603,7 @@ a:active {
   padding-left: 2.6em;
   border: 1px solid transparent;
 }
-/* line 215, ../../sass/screen.scss */
+/* line 199, ../../sass/screen.scss */
 .email-field:hover {
   background-color: #e5e5e5;
   border-color: #e0e0e0;
@@ -634,7 +620,7 @@ a:active {
   -o-transition-timing-function: ease-in;
   transition-timing-function: ease-in;
 }
-/* line 224, ../../sass/screen.scss */
+/* line 208, ../../sass/screen.scss */
 .email-field:focus {
   background-color: white;
   border-color: #dddddd;
@@ -652,20 +638,20 @@ a:active {
   transition-timing-function: ease-in;
 }
 
-/* line 234, ../../sass/screen.scss */
+/* line 218, ../../sass/screen.scss */
 .promise {
   color: #777777;
 }
-/* line 237, ../../sass/screen.scss */
+/* line 221, ../../sass/screen.scss */
 .promise .icon {
   text-shadow: 1px 1px 0 #b30000;
   color: #ff4d4d;
 }
-/* line 242, ../../sass/screen.scss */
+/* line 226, ../../sass/screen.scss */
 .promise h6 {
   margin: 0;
 }
-/* line 246, ../../sass/screen.scss */
+/* line 230, ../../sass/screen.scss */
 .promise p {
   font-size: 0.77778em;
   line-height: 1.85714em;
@@ -673,16 +659,52 @@ a:active {
   margin-top: .5em;
 }
 
-/* line 255, ../../sass/screen.scss */
+/* line 239, ../../sass/screen.scss */
 .page-footer {
   padding-left: 1.3em;
 }
-/* line 258, ../../sass/screen.scss */
+/* line 242, ../../sass/screen.scss */
 .page-footer p {
   margin-bottom: 0;
 }
 
-/* line 263, ../../sass/screen.scss */
+/* line 247, ../../sass/screen.scss */
 .copyright {
   color: #aaaaaa;
+}
+
+@media (max-width: 500px) {
+  /* line 252, ../../sass/screen.scss */
+  .container {
+    margin: 0 auto;
+    padding: 1em;
+  }
+
+  /* line 257, ../../sass/screen.scss */
+  .title {
+    font-size: 1.77778em;
+    line-height: 1.625em;
+    position: static;
+    display: block;
+    width: auto;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    text-align: center;
+  }
+
+  /* line 271, ../../sass/screen.scss */
+  .title:before {
+    display: none;
+  }
+
+  /* line 275, ../../sass/screen.scss */
+  .intro {
+    font-size: 1em;
+    line-height: 1.44444em;
+  }
+
+  /* line 279, ../../sass/screen.scss */
+  .email-field {
+    width: 95%;
+  }
 }
